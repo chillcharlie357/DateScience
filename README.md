@@ -10,7 +10,13 @@
 
 ## 代码开源地址：
 
+### GitHub仓库
+
 **https://github.com/leyang-he/DateScience.git**
+
+### 模型&源数据：
+
+https://www.aliyundrive.com/s/fZcS2dw994t
 
 ## 研究方法：
 
