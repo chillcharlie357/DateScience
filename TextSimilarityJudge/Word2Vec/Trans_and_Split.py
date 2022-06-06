@@ -1,5 +1,6 @@
 import zhconv
 import jieba
+import config
 
 def Trans_and_Split(input_file_name,output_file_name):
 
@@ -13,4 +14,6 @@ def Trans_and_Split(input_file_name,output_file_name):
 
 if __name__ == '__main__':
     #用wikich测试
-    Trans_and_Split(input_file_name='zhwiki-latest-pages-articles.txt',output_file_name='zhwiki-simple-ch.txt')
+    input_file_name = config.data_source_path + '/Init/' + 'zhwiki-latest-pages-articles.txt'
+    output_file_name = config.data_source_path + '/Init/' + 'zhwiki-simple-ch.txt'
+    Trans_and_Split(input_file_name=input_file_name,output_file_name=output_file_name)

@@ -11,7 +11,7 @@ import config
 @return:返回相似度,用txt存储
 '''
 def word2vec_main(original_text_name, extended_text_name):
-    model = gensim.models.Word2Vec.load('zhwiki.model')
+    model = gensim.models.Word2Vec.load('../Model/zhwiki.model')
     original_lines = TrainingModel.train_add(original_text_name)
     extended_lines = TrainingModel.train_add(extended_text_name)
 
@@ -39,14 +39,14 @@ def word2vec_main(original_text_name, extended_text_name):
             f.write(value_str + '  ')
         f.write("\n")
     ave /= count
-    f.write("平均相似度：%d" % ave)
+    f.write("平均相似度：%f" % ave)
     f.close()
 
 
 if __name__ == '__main__':
     for  i in range(len(config.original_date_files)):
-        original_text_name = config.data_source_path + '/' + config.original_date_files[i]
-        extended_text_name = config.data_source_path + '/' + config.extended_data_files[i]
+        original_text_name = config.data_source_path + '/Original/' + config.original_date_files[i]
+        extended_text_name = config.data_source_path + '/Extended/' + config.extended_data_files[i]
         # word2vec_main(original_text_name=original_text_name, extended_text_name=extended_text_name)
         try:
             word2vec_main(original_text_name=original_text_name,extended_text_name=extended_text_name)

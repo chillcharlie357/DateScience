@@ -1,9 +1,9 @@
-
+import config
 from gensim.corpora import WikiCorpus
 
 def Xml2Txt_main():
-    input_file_name = 'zhwiki-latest-pages-articles.xml.bz2'
-    output_file_name = 'zhwiki-latest-pages-articles.txt'
+    input_file_name = config.data_source_path + '/Init/' + 'zhwiki-latest-pages-articles.xml.bz2'
+    output_file_name = config.data_source_path + '/Init/' + 'zhwiki-latest-pages-articles.txt'
     #读入数据，解析
     input_file = WikiCorpus(input_file_name,dictionary={})
     output_file = open(output_file_name,'w',encoding='utf-8')

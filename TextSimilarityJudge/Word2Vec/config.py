@@ -14,4 +14,4 @@ extended_data_files = ['江苏省政府2018年政府工作报告.txt','江苏省
                     '【文字解读】省发展改革委：《关于加快推进基础设施投资建设的若干措施》....txt',
                     '【文字解读】省残联：《江苏省残疾预防行动计划（2021-2025年）....txt']
 
-data_source_path = './DataSource'
+data_source_path = '../DataSource'

@@ -5,6 +5,7 @@ from gensim.models.word2vec import LineSentence
 import string
 import zhon.hanzi
 import re
+import config
 
 def train_model(train_txt_name,model_file_name):
     #训练模型
@@ -37,7 +38,7 @@ def train_add(input_file_name):
     #     for i in range(len(new_sentences)):
     #         f.write("".join(new_sentences[i]))
     #追加训练模型
-    old_model =  gensim.models.Word2Vec.load('zhwiki.model')
+    old_model =  gensim.models.Word2Vec.load('../Model/zhwiki.model')
     old_model.build_vocab(new_sentences,update=True)
     old_model.train(new_sentences,total_examples=old_model.corpus_count,epochs=10)
 
@@ -48,4 +49,6 @@ def train_add(input_file_name):
 
 if __name__ == '__main__':
     # 加载经过分词的训练数据,初次训练
-    train_model('zhwiki-simple-ch.txt','zhwiki.model')
+    train_txt_name = config.data_source_path + '/Init/' + 'zhwiki-simple-ch.txt'
+    model_file_name = '../Model/' + 'zhwiki.model'
+    train_model(train_txt_name=train_txt_name,model_file_name=model_file_name)
